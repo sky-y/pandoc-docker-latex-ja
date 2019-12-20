@@ -1,0 +1,29 @@
+metadata-file: src/metadata.yaml
+input-files:
+  - src/akyuseiden.md
+  - src/colophon.md
+output-file: akyuseiden.pdf
+
+from: markdown+east_asian_line_breaks
+to: latex
+
+standalone: true
+pdf-engine: lualatex
+toc: true
+top-level-division: chapter
+
+
+variables:
+  # documentclass: ltjsbook
+  # classoption:
+  #   - b5
+  documentclass: jlreq
+  classoption:
+    - book
+    - paper=b5
+  luatexjapresetoptions:
+    - haranoaji
+    - nfssonly
+  indent: true
+
+verbosity: WARNING
