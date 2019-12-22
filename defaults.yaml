@@ -3,6 +3,7 @@ input-files:
   - src/akyuseiden.md
   - src/colophon.md
 output-file: book.pdf
+# output-file: book.tex
 
 from: markdown+east_asian_line_breaks
 to: latex
@@ -11,14 +12,23 @@ standalone: true
 pdf-engine: lualatex
 toc: true
 top-level-division: chapter
+resource-path: 
+  - .
+  - ./src/img
+  - ./src/review-jlreq
 
 variables:
   # documentclass: ltjsbook
   # classoption:
   #   - b5
-  documentclass: jlreq
+  # documentclass: jlreq
+  # classoption:
+  #   - book
+  #   - paper=b5
+  documentclass: review-jlreq
   classoption:
-    - book
+    - media=print
+    - cover=true
     - paper=b5
   luatexjapresetoptions:
     - haranoaji
